@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Laporan Hasil Analisis Kelayakan Bisnis - Khusus CEO &amp; Direksi</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    @page {
+        size: A4 portrait;
+        margin: 12mm 14mm 12mm 14mm;
+    }
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+        color: #0f172a;
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+        line-height: 1.45;
+        font-size: 9pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        width: 100%;
+        max-width: 100%;
+        
+        box-sizing: border-box;
+        position: relative;
+    }
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+        padding-top: 6px;
+    }
+
+    /* TOP CORPORATE BANNER */
+    .top-banner {
+        background: linear-gradient(135deg, #09122c 0%, #172554 60%, #1e40af 100%);
+        color: #ffffff;
+        padding: 16px 20px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+    .top-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.16);
+        color: #93c5fd;
+        font-size: 7pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        padding: 2.5px 8px;
+        border-radius: 4px;
+        margin-bottom: 5px;
+    }
+    .top-banner h1 {
+        margin: 0;
+        font-size: 14pt;
+        font-weight: 800;
+        letter-spacing: -0.2px;
+        color: #ffffff;
+        line-height: 1.25;
+    }
+    .top-banner p {
+        margin: 4px 0 0 0;
+        font-size: 8.5pt;
+        color: #bfdbfe;
+        font-weight: 500;
+    }
+
+    /* MINI BANNER FOR SUBSEQUENT PAGES */
+    .mini-banner {
+        background: linear-gradient(90deg, #0f172a 0%, #1e40af 100%);
+        color: #ffffff;
+        padding: 8px 14px;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 8pt;
+    }
+    .mini-banner b { color: #93c5fd; }
+
+    /* METADATA STRIP */
+    .meta-strip {
+        display: flex;
+        justify-content: space-between;
+        background: #f1f5f9;
+        border-radius: 6px;
+        padding: 7px 12px;
+        margin-bottom: 12px;
+        font-size: 7.8pt;
+        color: #475569;
+        border: 1px solid #e2e8f0;
+    }
+    .meta-strip b { color: #0f172a; }
+
+    /* EXECUTIVE VERDICT CARD */
+    .verdict-card {
+        background: #f0fdf4;
+        border: 2px solid #10b981;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+    }
+    .verdict-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+    .verdict-title {
+        font-size: 10.5pt;
+        font-weight: 800;
+        color: #065f46;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .verdict-badge {
+        background: #10b981;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 5px;
+        font-size: 8.5pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .verdict-card p {
+        margin: 0;
+        font-size: 8.8pt;
+        color: #064e3b;
+        text-align: justify;
+        line-height: 1.45;
+    }
+
+    /* METRIC RIBBON */
+    .metric-ribbon {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+    .metric-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 8px 10px;
+        text-align: center;
+    }
+    .metric-card.green { border-top: 3px solid #10b981; }
+    .metric-card.blue { border-top: 3px solid #2563eb; }
+    .metric-card.amber { border-top: 3px solid #f59e0b; }
+    .metric-card.purple { border-top: 3px solid #8b5cf6; }
+    .metric-val {
+        font-size: 12.5pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0;
+    }
+    .metric-card.green .metric-val { color: #059669; }
+    .metric-card.blue .metric-val { color: #1d4ed8; }
+    .metric-lbl {
+        font-size: 7pt;
+        font-weight: 700;
+        color: #64748b;
+        text-transform: uppercase;
+        margin-top: 2px;
+    }
+
+    /* SECTION HEADINGS */
+    .sec-title {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin: 14px 0 8px 0;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 4px;
+    }
+    .sec-badge {
+        background: #1e40af;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8pt;
+        font-weight: 800;
+    }
+    .sec-title h2 {
+        margin: 0;
+        font-size: 10.5pt;
+        font-weight: 800;
+        color: #1e3a8a;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+    }
+
+    /* TABLES */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 10px 0;
+        font-size: 8pt;
+    }
+    th {
+        background: #1e3a8a;
+        color: white;
+        padding: 6px 8px;
+        text-align: left;
+        font-weight: 700;
+    }
+    td {
+        border: 1px solid #cbd5e1;
+        padding: 5.5px 8px;
+        vertical-align: top;
+        line-height: 1.35;
+    }
+    tr:nth-child(even) { background: #f8fafc; }
+
+    /* CALLOUT BOXES */
+    .callout-box {
+        border-radius: 6px;
+        padding: 9px 12px;
+        margin: 8px 0;
+        font-size: 8.3pt;
+        line-height: 1.4;
+    }
+    .callout-box.blue {
+        background: #eff6ff;
+        border-left: 4px solid #2563eb;
+        color: #1e3a8a;
+    }
+    .callout-box.amber {
+        background: #fffbeb;
+        border-left: 4px solid #f59e0b;
+        color: #92400e;
+    }
+    .callout-box.emerald {
+        background: #ecfdf5;
+        border-left: 4px solid #10b981;
+        color: #065f46;
+    }
+    .callout-box h4 {
+        margin: 0 0 3px 0;
+        font-size: 8.8pt;
+        font-weight: 800;
+    }
+
+    /* CARDS & GRIDS */
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 8px 0;
+    }
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 8px 0;
+    }
+    .card-box {
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 9px 11px;
+    }
+    .card-box.blue { border-top: 3px solid #2563eb; }
+    .card-box.emerald { border-top: 3px solid #10b981; }
+    .card-box.crimson { border-top: 3px solid #ef4444; background: #fffbfb; }
+    .card-box h3 {
+        margin: 0 0 4px 0;
+        font-size: 9pt;
+        font-weight: 800;
+        color: #0f172a;
+    }
+    .card-box p {
+        margin: 0;
+        font-size: 8pt;
+        color: #334155;
+        line-height: 1.35;
+        text-align: justify;
+    }
+
+    /* COMPARISON CALLOUT */
+    .compare-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 8px 0;
+    }
+    .compare-card {
+        border-radius: 6px;
+        padding: 9px 12px;
+        border: 1.5px solid;
+    }
+    .compare-card.b2c {
+        background: #fef2f2;
+        border-color: #fca5a5;
+    }
+    .compare-card.b2b {
+        background: #ecfdf5;
+        border-color: #6ee7b7;
+    }
+    .compare-head {
+        font-size: 8.8pt;
+        font-weight: 800;
+        margin: 0 0 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .compare-card.b2c .compare-head { color: #991b1b; }
+    .compare-card.b2b .compare-head { color: #065f46; }
+    .compare-card ul {
+        margin: 0;
+        padding-left: 15px;
+        font-size: 7.8pt;
+        color: #1e293b;
+    }
+    .compare-card li { margin-bottom: 3.5px; line-height: 1.3; }
+
+    /* SYNTHESIS BOX */
+    .synthesis-card {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 11px 15px;
+        margin: 10px 0;
+        border-left: 4.5px solid #38bdf8;
+    }
+    .synthesis-tag {
+        background: #38bdf8;
+        color: #0f172a;
+        font-size: 6.8pt;
+        font-weight: 800;
+        padding: 1.5px 6px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .synthesis-card h3 {
+        margin: 0 0 4px 0;
+        font-size: 9.8pt;
+        font-weight: 800;
+        color: #ffffff;
+    }
+    .synthesis-card p {
+        margin: 0;
+        font-size: 8.2pt;
+        color: #cbd5e1;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    /* ROADMAP GRID */
+    .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin: 10px 0;
+    }
+    .roadmap-item {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 8px 10px;
+        border-top: 3px solid #1e40af;
+    }
+    .roadmap-step {
+        font-size: 6.8pt;
+        font-weight: 800;
+        color: #2563eb;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+    }
+    .roadmap-title {
+        font-size: 8.2pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 3px 0;
+    }
+    .roadmap-desc {
+        font-size: 7.2pt;
+        color: #475569;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    /* SIGN-OFF BOX */
+    .signoff-box {
+        border: 2px dashed #94a3b8;
+        border-radius: 8px;
+        padding: 10px 14px;
+        background: #f8fafc;
+        margin-top: 12px;
+    }
+    .signoff-header {
+        font-size: 8.5pt;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+    .signoff-options {
+        display: flex;
+        gap: 20px;
+        font-size: 8pt;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .signoff-signatures {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 14px;
+        font-size: 7.8pt;
+    }
+    .signoff-col {
+        text-align: center;
+        width: 38%;
+    }
+    .signoff-line {
+        border-bottom: 1px solid #64748b;
+        margin-top: 30px;
+        margin-bottom: 3px;
+    }
+
+    /* FOOTER */
+    .doc-footer {
+        border-top: 1px solid #e2e8f0;
+        padding-top: 6px;
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 7.2pt;
+        color: #94a3b8;
+    }
+</style>
+</head>
+<body>
+
+<!-- ==================== HALAMAN 1 ==================== -->
+<div class="page">
+    <!-- TOP BANNER -->
+    <div class="top-banner">
+        <div class="top-tag">MEMORANDUM STRATEGIS MANAJEMEN • KHUSUS DIREKSI &amp; CEO</div>
+        <h1>HASIL STUDI KELAYAKAN BISNIS &amp; EVALUASI PASAR:<br>PROJECT QR-BASED EVENT PHOTO SAAS INDONESIA</h1>
+        <p>Laporan Resmi Menjawab Pertanyaan: "Apakah Proyek Ini Layak Dilanjutkan dan Bagaimana Prospeknya Menghadapi Kompetitor?"</p>
+    </div>
+
+    <!-- METADATA STRIP -->
+    <div class="meta-strip">
+        <div>Ditujukan Kepada: <b>Chief Executive Officer (CEO) &amp; Jajaran Direksi</b></div>
+        <div>Sifat Dokumen: <b>Rahasia Internal Perusahaan</b></div>
+        <div>Tanggal Evaluasi: <b>Oktober 2026</b></div>
+        <div>Metode Uji: <b>Empiris Lapangan &amp; Simulasi Stokastik 1.000 Iterasi</b></div>
+    </div>
+
+    <!-- EXECUTIVE VERDICT BANNER -->
+    <div class="verdict-card">
+        <div class="verdict-header">
+            <div class="verdict-title">
+                <span>🎯</span> KESIMPULAN KEPUTUSAN STRATEGIS (THE EXECUTIVE VERDICT)
+            </div>
+            <div class="verdict-badge">STATUS: CONDITIONAL GO</div>
+        </div>
+        <p>
+            Berdasarkan hasil analisis data komprehensif (Unit Economics, Benchmark Kompetitor Nasional, dan Uji Stres Monte Carlo 1.000 Iterasi), manajemen memutuskan: <b>PROYEK INI SANGAT LAYAK DILANJUTKAN DAN DIBANGUN, TETAPI DENGAN SATU SYARAT MUTLAK: MODEL DISTRIBUSI WAJIB MENGGUNAKAN KEMITRAAN B2B WEDDING ORGANIZER (WO), DAN DILARANG MENJUAL ECERAN KE CALON PENGANTIN (B2C).</b> Produk ini memiliki keunggulan margin kotor 73.7% – 91.9%, biaya komputasi per event sangat murah (Rp 17.400), dan harga 7x lebih terjangkau dari photobooth konvensional. Prospek penetrasi pasar terbuka lebar jika dieksekusi melalui jaringan kemitraan B2B.
+        </p>
+    </div>
+
+    <!-- METRIC RIBBON -->
+    <div class="metric-ribbon">
+        <div class="metric-card green">
+            <div class="metric-val">73.7% – 91.9%</div>
+            <div class="metric-lbl">Margin Kotor SaaS</div>
+        </div>
+        <div class="metric-card blue">
+            <div class="metric-val">Rp 299.000</div>
+            <div class="metric-lbl">Titik Manis Harga (Sweet Spot)</div>
+        </div>
+        <div class="metric-card amber">
+            <div class="metric-val">29.3 Acara / Bln</div>
+            <div class="metric-lbl">Titik Impas Operasional (BEP)</div>
+        </div>
+        <div class="metric-card purple">
+            <div class="metric-val">98.8%</div>
+            <div class="metric-lbl">Peluang Sukses Jalur B2B</div>
+        </div>
+    </div>
+
+    <!-- BAB 1 -->
+    <div class="sec-title">
+        <div class="sec-badge">1</div>
+        <h2>JAWABAN PERTANYAAN 1: BAGAIMANA PROSPEKNYA BERKACA DARI PARA KOMPETITOR?</h2>
+    </div>
+
+    <p style="margin: 0 0 6px 0; text-align: justify; font-size: 8.3pt;">
+        Riset komprehensif terhadap lanskap industri dokumentasi pernikahan di Indonesia membuktikan bahwa pasar saat ini <b>terbelah menjadi dua kutub ekstrem</b>, yang secara strategis membuka <b>celah pasar emas (Sweet Spot)</b> bagi produk kita:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Kategori Kompetitor</th>
+                <th style="width: 25%;">Pemain &amp; Rentang Harga</th>
+                <th style="width: 28%;">Kelemahan Operasional Pemain</th>
+                <th style="width: 27%;">Peluang Penetrasi Produk Kita</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Pemain Konvensional (Physical Photobooth)</b></td>
+                <td><b>Fotoimoet, Viding, Invitato</b><br>(Rp 1.400.000 s/d Rp 2.100.000)</td>
+                <td>Beban inventaris fisik tinggi (mesin cetak, kamera DSLR, booth fisik) serta butuh 2-3 kru operator di lokasi. Skalabilitas terbatas maksimal 1-2 event/hari per tim.</td>
+                <td><b>Disrupsi Harga 7x Lipat:</b> Produk kita berbasis software QR 100% cloud tanpa alat fisik. Menawarkan sensasi candid seharga Rp 299.000 yang langsung menyerap pasar hemat anggaran.</td>
+            </tr>
+            <tr>
+                <td><b>Pemain Direct SaaS (Pesaing Langsung)</b></td>
+                <td><b>Satualbum.id</b><br>(Rp 299.000 s/d Rp 599.000)</td>
+                <td>Menjadi patokan psikologis pasar, namun sangat bergantung pada iklan digital eceran B2C yang mahal dengan tingkat *churn rate* 100% (konsumen hanya menikah 1 kali).</td>
+                <td><b>Kemitraan WO B2B:</b> Alih-alih membakar uang iklan melawan Satualbum, kita menggandeng Wedding Organizer dengan skema bagi hasil, mengunci basis event berulang.</td>
+            </tr>
+            <tr>
+                <td><b>Perusak Harga Ekstrem (Price War Trap)</b></td>
+                <td><b>Kenang Kurinji</b><br>(Rp 79.000 per paket)</td>
+                <td>Menjual di harga tidak masuk akal (Rp 790/tamu). Unit economics membuktikan pada level ini perusahaan mengalami <b>kerugian bersih -Rp 23.000 per acara</b>.</td>
+                <td><b>Disiplin Harga Manajemen:</b> Kita menolak perang harga murah. Kurinji dipastikan tidak *sustainable* karena tidak menutup biaya akuisisi dan infrastruktur.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout-box blue">
+        <h4>💡 Kesimpulan Prospek Pasar bagi CEO:</h4>
+        Demografi pernikahan BPS mencatat <b>1,48 Juta pernikahan per tahun di Indonesia</b>, dengan pasar sasaran perkotaan modern (SAM) sebesar <b>251.000 acara per tahun</b>. Untuk mencapai profitabilitas operasional yang kokoh, perusahaan hanya butuh mengamankan <b>753 acara per tahun</b> (atau hanya <b>0,3%</b> dari pasar perkotaan). Prospek pasar sangat terbuka luas karena generasi Z dan Milenial menyukai interaksi foto candid instan, sementara Wedding Organizer memerlukan diferensiasi paket bernilai tambah tinggi.
+    </div>
+
+    <!-- FOOTER PAGE 1 -->
+    <div class="doc-footer">
+        <div><b>Laporan Evaluasi Kelayakan Bisnis Manajemen</b> • Khusus Chief Executive Officer (CEO) &amp; Direksi</div>
+        <div>Halaman 1 dari 3 • Lampiran Model: Feasibility dasboard.pbix</div>
+    </div>
+</div>
+
+<!-- ==================== HALAMAN 2 ==================== -->
+<div class="page page-break">
+    <!-- MINI BANNER -->
+    <div class="mini-banner">
+        <div><b>MEMORANDUM KELAYAKAN BISNIS</b> • EVALUASI PRODUK, EKONOMI UNIT &amp; STRATEGI DISTRIBUSI</div>
+        <div>HALAMAN 2 DARI 3</div>
+    </div>
+
+    <!-- BAB 2 -->
+    <div class="sec-title">
+        <div class="sec-badge">2</div>
+        <h2>JAWABAN PERTANYAAN 2: APAKAH PROJECT BISNIS INI LAYAK DILANJUTKAN DIBANGUN?</h2>
+    </div>
+
+    <p style="margin: 0 0 6px 0; text-align: justify; font-size: 8.3pt;">
+        <b>YA, PROYEK INI SANGAT LAYAK DIBANGUN</b>. Dari perspektif ekonomi perangkat lunak (Software Economics), efisiensi marjinal produk ini sangat superior dibandingkan bisnis jasa konvensional:
+    </p>
+
+    <div class="grid-2">
+        <div class="card-box emerald">
+            <h3>1. Keunggulan Cloud Storage Economics</h3>
+            <p>
+                Infrastruktur AWS S3 untuk menampung 500–800 foto beresolusi tinggi selama 12 bulan hanya memakan <b>Rp 17.400 per acara</b> (hanya 5.8% dari harga jual paket Rp 299.000). Ditambah biaya gerbang pembayaran Midtrans QRIS sebesar <b>Rp 2.900</b>, biaya produksi langsung (COGS) hanya Rp 20.300. Artinya, <b>setiap acara menghasilkan Margin Kotor di atas 93%</b> sebelum komisi mitra.
+            </p>
+        </div>
+        <div class="card-box blue">
+            <h3>2. Titik Impas (BEP) Operasional Sangat Rendah</h3>
+            <p>
+                Dengan estimasi biaya operasional tetap kantor (server pokok, domain, dan utilitas dasar) diasumsikan Rp 5.000.000 per bulan, titik impas operasional (BEP) tercapai hanya pada <b>29.3 acara per bulan</b>. Artinya, perusahaan hanya perlu melayani rata-rata <b>1 acara per hari</b> di seluruh Indonesia untuk menutup seluruh beban rutin. Di atas 1 event/hari, perusahaan mencetak profit murni.
+            </p>
+        </div>
+    </div>
+
+    <div class="callout-box amber">
+        <h4>⚠️ Peringatan Regulasi Harga Internal (Price Floor Governance):</h4>
+        Simulasi sensitivitas harga menunjukkan bahwa paket di harga Rp 199.000 hanya menyisakan margin tipis, sedangkan paket di harga Rp 79.000 (meniru Kurinji) menghasilkan kerugian riil <b>-Rp 23.000/acara</b> setelah memperhitungkan biaya gateway dan operasional. Manajemen wajib memberlakukan kebijakan: <b>DILARANG MERILIS PAKET DI BAWAH RP 199.000</b> dalam kondisi apa pun.
+    </div>
+
+    <!-- BAB 3 -->
+    <div class="sec-title">
+        <div class="sec-badge">3</div>
+        <h2>DILEMA MANAJEMEN: MENGAPA MODEL B2C GAGAL DAN B2B WAJIB DIJALANKAN?</h2>
+    </div>
+
+    <p style="margin: 0 0 6px 0; text-align: justify; font-size: 8.3pt;">
+        Inilah temuan analitis paling krusial bagi CEO. Kelayakan proyek ini ditentukan bukan pada kecanggihan teknologi aplikasinya, melainkan pada <b>pemilihan saluran distribusi penjualan</b>:
+    </p>
+
+    <div class="compare-container">
+        <div class="compare-card b2c">
+            <div class="compare-head">❌ MODEL A: JUAL LANGSUNG KE PENGANTIN (B2C)</div>
+            <ul>
+                <li><b>Jebakan Churn 100%:</b> Pasangan pengantin hanya menikah 1 kali seumur hidup. Tidak ada pembelian berulang (*zero repeat purchase*).</li>
+                <li><b>Biaya Iklan Menjerat Leher:</b> Biaya akuisisi pelanggan (CAC) melalui iklan digital Meta &amp; TikTok mencapai rata-rata <b>Rp 120.000 per transaksi</b>. Seluruh margin laba habis diserap penyedia iklan.</li>
+                <li><b>Hasil Uji Stres Monte Carlo:</b> Tingkat keberhasilan bisnis bertahan dalam simulasi 24 bulan adalah <b>0.0% (PASTI DEFISIT DAN GAGAL)</b>.</li>
+                <li><b>Keputusan Direksi:</b> <u>TOLAK PENJUALAN B2C SECARA TEGAS</u>.</li>
+            </ul>
+        </div>
+        <div class="compare-card b2b">
+            <div class="compare-head">✅ MODEL B: KEMITRAAN WEDDING ORGANIZER (B2B)</div>
+            <ul>
+                <li><b>Mesin Pengganda Volume Berulang:</b> Satu kali mengakuisisi mitra Wedding Organizer (WO), mereka menyumbang <b>25 hingga 35 acara pernikahan per tahun</b> secara berkelanjutan.</li>
+                <li><b>Biaya Pemasaran Jauh Lebih Efisien:</b> Biaya kemitraan dan sales hanya memakan Rp 15.000 – Rp 25.000 per event yang dialirkan.</li>
+                <li><b>Hasil Uji Stres Monte Carlo:</b> Tingkat keberhasilan profitabilitas melonjak menjadi <b>98.8%</b>, didorong oleh 31 mitra aktif yang memproduksi ~90 event/bulan di tahun ke-2.</li>
+                <li><b>Keputusan Direksi:</b> <u>FOKUSKAN 100% STRATEGI KE B2B WO</u>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SYNTHESIS BOX -->
+    <div class="synthesis-card">
+        <div class="synthesis-tag">SINTESIS STRATEGIS UNTUK CEO</div>
+        <h3>Benang Merah Kesimpulan Manajemen:</h3>
+        <p>
+            "Pasar menginginkan produk ini, kompetitor konvensional terlalu mahal, dan teknologi kita sangat efisien. Namun manajemen tidak boleh terjebak euforia berjualan eceran di media sosial. Model bisnis kita yang sesungguhnya adalah <b>Penyedia Infrastruktur Teknologi B2B bagi Wedding Organizer</b>. Jadikan Wedding Organizer sebagai *sales force* terdepan kita di lapangan dengan skema komisi bagi hasil yang menarik."
+        </p>
+    </div>
+
+    <!-- FOOTER PAGE 2 -->
+    <div class="doc-footer">
+        <div><b>Laporan Evaluasi Kelayakan Bisnis Manajemen</b> • Khusus Chief Executive Officer (CEO) &amp; Direksi</div>
+        <div>Halaman 2 dari 3 • Lampiran Model: Feasibility dasboard.pbix</div>
+    </div>
+</div>
+
+<!-- ==================== HALAMAN 3 ==================== -->
+<div class="page page-break">
+    <!-- MINI BANNER -->
+    <div class="mini-banner">
+        <div><b>MEMORANDUM KELAYAKAN BISNIS</b> • MITIGASI RISIKO, PETA JALAN AKSI &amp; OTORISASI CEO</div>
+        <div>HALAMAN 3 DARI 3</div>
+    </div>
+
+    <!-- BAB 4 -->
+    <div class="sec-title">
+        <div class="sec-badge">4</div>
+        <h2>IDENTIFIKASI &amp; MITIGASI RISIKO OPERASIONAL MANAJEMEN</h2>
+    </div>
+
+    <p style="margin: 0 0 6px 0; text-align: justify; font-size: 8.3pt;">
+        Untuk memastikan eksekusi proyek berjalan mulus dan terlindungi dari potensi kegagalan teknis maupun komersial, manajemen telah menyusun langkah mitigasi mitigatif:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 25%;">Area Risiko</th>
+                <th style="width: 35%;">Potensi Masalah di Lapangan</th>
+                <th style="width: 40%;">Langkah Mitigasi Pencegahan Teknis / Bisnis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Koneksi Internet Venue Lemah</b></td>
+                <td>Sinyal seluler 4G/5G drop saat 500 tamu berkumpul di dalam ballroom hotel / gedung tertutup.</td>
+                <td><b>Teknologi PWA Offline-First:</b> Tamu tetap bisa mengambil foto dan menyimpan antrean unggahan secara lokal. Foto otomatis terunggah saat perangkat mendeteksi koneksi stabil.</td>
+            </tr>
+            <tr>
+                <td><b>Lonjakan Beban Komputasi (Traffic Spike)</b></td>
+                <td>Ratusan tamu mengunggah foto bersamaan dalam durasi 2 jam acara resepsi.</td>
+                <td><b>AWS Direct Upload S3:</b> Unggahan foto langsung dialirkan dari browser tamu ke AWS S3 via *pre-signed URL*, tanpa membebani server backend utama perusahaan.</td>
+            </tr>
+            <tr>
+                <td><b>Resistensi Fotografer Vendor</b></td>
+                <td>Fotografer resmi pernikahan merasa terancam bahwa aplikasi ini akan menggantikan jasa mereka.</td>
+                <td><b>Positioning Komplementer:</b> Aplikasi diposisikan sebagai "Buku Tamu Foto Digital &amp; Candid Tamu", bukan pengganti foto formal pengantin. Fotografer justru bisa diberi akses unduh gratis.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- BAB 5 -->
+    <div class="sec-title">
+        <div class="sec-badge">5</div>
+        <h2>PETA JALAN AKSI EKSEKUTIF (THE CEO ACTION ROADMAP)</h2>
+    </div>
+
+    <div class="roadmap-grid">
+        <div class="roadmap-item">
+            <div class="roadmap-step">Kuartal 1 (Bulan 1–2)</div>
+            <div class="roadmap-title">1. Putusan Resmi GO</div>
+            <div class="roadmap-desc">Otorisasi resmi pengembangan platform MVP dengan fokus arsitektur PWA berbasis QR dan integrasi AWS S3 &amp; Midtrans QRIS.</div>
+        </div>
+        <div class="roadmap-item">
+            <div class="roadmap-step">Kuartal 2 (Bulan 3–4)</div>
+            <div class="roadmap-title">2. Kunci Kebijakan Harga</div>
+            <div class="roadmap-desc">Kunci harga resmi Rp 299.000/acara. Alokasikan komisi kemitraan WO sebesar 25% (Rp 75.000) dan haramkan paket &lt; Rp 199.000.</div>
+        </div>
+        <div class="roadmap-item">
+            <div class="roadmap-step">Kuartal 3 (Bulan 5–7)</div>
+            <div class="roadmap-title">3. Program Pilot 5 WO</div>
+            <div class="roadmap-desc">Uji coba komersial eksklusif dengan 5 Wedding Organizer terpilih di Jakarta dan Bandung untuk memvalidasi kepuasan operasional.</div>
+        </div>
+        <div class="roadmap-item">
+            <div class="roadmap-step">Kuartal 4 (Bulan 8–12)</div>
+            <div class="roadmap-title">4. Ekspansi 20–30 Mitra</div>
+            <div class="roadmap-desc">Skalakan kemitraan ke 20–30 Wedding Organizer di kota-kota besar untuk mengamankan target tahunan 753 acara.</div>
+        </div>
+    </div>
+
+    <!-- LEMBAR OTORISASI RESMI DIREKSI -->
+    <div class="signoff-box">
+        <div class="signoff-header">LEMBAR OTORISASI &amp; KEPUTUSAN RESMI DIREKSI (EXECUTIVE SIGN-OFF)</div>
+        <div class="signoff-options">
+            <div>[ &nbsp;<b>✓</b>&nbsp; ] <b>DISETUJUI (GO)</b>: Dilanjutkan dengan Model Distribusi 100% Kemitraan B2B WO</div>
+            <div>[ &nbsp; &nbsp; ] <b>DITUNDA</b>: Memerlukan Uji Coba Lanjutan</div>
+            <div>[ &nbsp; &nbsp; ] <b>DITOLAK</b>: Proyek Dihentikan</div>
+        </div>
+        <div style="font-size: 7.8pt; color: #475569; font-style: italic; margin-bottom: 8px;">
+            Catatan Arahan CEO: "Setujui implementasi MVP berfokus murni pada kemitraan B2B Wedding Organizer. Larang keterlibatan anggaran promosi berbayar B2C. Jaga disiplin penetapan harga minimum Rp 299.000."
+        </div>
+        <div class="signoff-signatures">
+            <div class="signoff-col">
+                <div>Disiapkan &amp; Dianalisis Oleh:</div>
+                <div class="signoff-line"></div>
+                <div><b>Tim Analis Bisnis &amp; Business Intelligence</b></div>
+            </div>
+            <div class="signoff-col">
+                <div>Disetujui &amp; Diputuskan Oleh:</div>
+                <div class="signoff-line"></div>
+                <div><b>Chief Executive Officer (CEO)</b></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER PAGE 3 -->
+    <div class="doc-footer">
+        <div><b>Laporan Evaluasi Kelayakan Bisnis Manajemen</b> • Khusus Chief Executive Officer (CEO) &amp; Direksi</div>
+        <div>Halaman 3 dari 3 • Selesai • Database Power BI: Feasibility dasboard.pbix</div>
+    </div>
+</div>
+
+</body>
+</html>

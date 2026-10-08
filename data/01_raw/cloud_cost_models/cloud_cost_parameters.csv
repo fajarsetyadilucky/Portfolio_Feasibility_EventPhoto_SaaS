@@ -1,0 +1,13 @@
+category,item,value,unit,source,data_status
+payment_gateway,Midtrans QRIS,0.007,fraction of transaction,midtrans.com/pricing 2026-10-07 (belum termasuk kebijakan MDR QRIS),verified
+payment_gateway,Midtrans GoPay,0.02,fraction of transaction,midtrans.com/pricing 2026-10-07,verified
+payment_gateway,Midtrans Virtual Account,4000,IDR per transaction,midtrans.com/pricing 2026-10-07,verified
+cloud_storage,AWS S3 Standard ap-southeast-3,0.025,USD per GB-month,AWS Price List API AmazonS3 ap-southeast-3 (pub 2026-09-28) tier 0-50TB,verified
+cloud_egress,AWS Data Transfer Out to Internet,0.132,USD per GB,AWS Price List API AWSDataTransfer ap-southeast-3 (pub 2026-09-16) tier 0-10TB; free tier 100GB/bln diabaikan (konservatif),verified
+cloud_ingress,AWS Data Transfer In,0,USD per GB,AWS (gratis),verified
+fx,USD to IDR,16500,IDR per USD,asumsi kurs tetap (ganti dengan kurs BI saat finalisasi),ASSUMPTION
+usage,Foto per event (min),300,photos,README fase 4,ASSUMPTION
+usage,Foto per event (max),1500,photos,README fase 4,ASSUMPTION
+usage,Ukuran rata-rata per foto,5,MB,asumsi foto ponsel terkompresi (README: 3-8 GB per event),ASSUMPTION
+usage,Rasio guest view/download terhadap storage,1.0,x storage per event,asumsi: album diunduh penuh sekali,ASSUMPTION
+usage,Masa retensi album,12,months,README (janji akses 1-2 tahun),ASSUMPTION

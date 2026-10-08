@@ -1,0 +1,16 @@
+competitor,market,package,max_guests,price_idr_normal,price_idr_current,price_per_guest_idr,tier_status,product_type,billing_model,source,data_status
+Satualbum.id,Indonesia,Starter,5,0,0,0,active,direct digital disposable camera,one-time per event,satualbum.id config 2026-10-07,verified
+Satualbum.id,Indonesia,Event,100,499000,299000,2990,active,direct digital disposable camera,one-time per event,satualbum.id config 2026-10-07,verified
+Satualbum.id,Indonesia,Pesta,150,729000,439000,2927,active (best seller),direct digital disposable camera,one-time per event,satualbum.id config 2026-10-07,verified
+Satualbum.id,Indonesia,Wedding,200,989000,599000,2995,active,direct digital disposable camera,one-time per event,satualbum.id config 2026-10-07,verified
+Satualbum.id,Indonesia,Unlimited,9999,1650000,999000,,active,direct digital disposable camera,one-time per event,satualbum.id config 2026-10-07,verified
+Kenang Kurinji,Indonesia,Kincai,10,0,0,0,active,direct digital disposable camera,one-time per event (30 hari),kenang.kurinji.asia 2026-10-07,verified
+Kenang Kurinji,Indonesia,Kurinji,100,79000,79000,790,active (favorite),direct digital disposable camera,one-time per event (1 thn),kenang.kurinji.asia 2026-10-07,verified
+Kenang Kurinji,Indonesia,Gunung Tujuh,300,199000,199000,663,active,direct digital disposable camera,one-time per event (1 thn),kenang.kurinji.asia 2026-10-07,verified
+Our Wedding Link,Indonesia,Luxury (termasuk disposable camera 15 foto/tamu),,800000,280000,,active,bundled: web invitation + disposable camera,one-time per event,our-wedding.link 2026-10-06,verified_bundle_price_not_camera_only
+Our Wedding Link,Indonesia,Exclusive (tanpa kamera),,400000,180000,,active,undangan digital saja (pembanding bundel),one-time per event,our-wedding.link 2026-10-06,verified_not_camera
+Fotoimoet,Indonesia,Printless Photobooth 1 Jam,,,1250000,,active,hardware/onsite: DSLR + lighting + QR softcopy,per event (1 jam),fotoimoet.com 2026-10-07,verified_onsite_photobooth
+Fotoimoet,Indonesia,Printless Photobooth 2 Jam,,,1600000,,active,hardware/onsite: DSLR + lighting + QR softcopy,per event (2 jam),fotoimoet.com 2026-10-07,verified_onsite_photobooth
+Viding,Indonesia,E-Guestbook QR Check-in,9999,2390000,2100000,,active,onsite hardware: check-in scanner + crew + screen,per event,viding.co 2026-10-07,verified_onsite_guestbook
+Invitato,Indonesia,Digital Guestbook QR System,9999,,2000000,,active,onsite hardware: tablet + printer label + usher,per event,invitato.id 2026-10-07,verified_onsite_guestbook
+Wedivo,Indonesia,(harga tidak dipublikasikan),,,,,unknown,direct digital disposable camera + platform WO/reseller,belum diketahui,wedivo.id,TO_VERIFY_EXCLUDED
